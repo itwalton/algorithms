@@ -1,6 +1,6 @@
 # Algorithms
 
-A collection of popular algorithms used to solve commonly-occuring problems in computer science.
+A collection of popular algorithms used to solve commonly-occurring problems in computer science.
 
 
 ## Karatsuba Integer Multiplication
@@ -228,5 +228,31 @@ __Sources__
 `recursive_square_matrix_multiplication([[1, 2], [3, 4]], [[5, 6], [7, 8]]) # => [[19, 22], [43, 50]]`
 
 __Sources__
-* [Strassen's Algorithm (WikiPedia)](https://en.wikipedia.org/wiki/Strassen_algorithm)
+* [Strassen's Algorithm (Wikipedia)](https://en.wikipedia.org/wiki/Strassen_algorithm)
+* [Divide & Conquer Algorithms (Coursera)](https://www.coursera.org/learn/algorithms-divide-conquer)
+
+
+### Karger's Randomized Contraction Algorithm
+
+**Description:** Determine the minimum cut of an undirected graph, to a considerable degree of confidence, by contracting an edge at random, repeated over many trials.
+
+**Algorithm**
+
+While there are more than 2 vertices:
+
+1. Pick a remaining edge (u, v) uniformly at random
+2. Merge, or "contract", u and v into a single vertex
+3. Remove self-loops (i.e. edges between the two vertices)
+
+**Time Complexity:** *O(mn^2), where n is the # of vertices and m is the # of edges*
+**Space Complexity:** *O(mn)*
+
+**Example**
+
+`graph = { 1: [2, 3, 5], 2: [1, 3, 4], 3: [1, 2, 4, 5], 4: [2, 3, 5], 5: [1, 3, 4] }`
+
+`min_cut_over_consecutive_trials(graph, 100) # => 3`
+
+__Sources__
+* [Karger's Algorithm (Wikipedia)](https://en.wikipedia.org/wiki/Karger%27s_algorithm)
 * [Divide & Conquer Algorithms (Coursera)](https://www.coursera.org/learn/algorithms-divide-conquer)
