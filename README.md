@@ -20,3 +20,14 @@ __Sources__
 * [Karatsuba Algorithm (Wikipedia)](https://en.wikipedia.org/wiki/Karatsuba_algorithm)
 * [Gauss' Law (Wikipedia)](https://en.wikipedia.org/wiki/Gauss%27_law)
 * [Divide & Conquer Algorithms (Coursera)](https://www.coursera.org/learn/algorithms-divide-conquer)
+
+## Merge Sort
+
+**Description:** Recursively split input array of length n into n arrays of length 1 and walk pointers over subarrays to "merge" them back together.
+**Time Complexity:** *O(nlogn)*
+**Space Complexity:** *O(n)*
+**Example:** `merge_sort([1, 3, 5, 2, 4]) => [1, 2, 3, 4, 5]`
+
+__Sources__
+* [Merge Sort (Wikipedia)](https://en.wikipedia.org/wiki/Merge_sort)
+* [Divide & Conquer Algorithms (Coursera)](https://www.coursera.org/learn/algorithms-divide-conquer)
