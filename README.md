@@ -143,3 +143,43 @@ __Sources__
 __Sources__
 * [Closest Pair of Points (Wikipedia)](https://en.wikipedia.org/wiki/Closest_pair_of_points_problem)
 * [Divide & Conquer Algorithms (Coursera)](https://www.coursera.org/learn/algorithms-divide-conquer)
+
+
+## Counting Inversions
+
+**Inversion:** # of pairs (i, j) of array indices with i < j & A[i] > A[j]
+
+### Brute-force Method
+
+**Description:** Iterate over every pair of indices and sum the inversions
+
+**Time Complexity:** *O(n^2)*
+
+**Example:**
+
+`count_inversions_brute_force([9, 1, 2, 3, 4]) => 4`
+
+### Divide & Conquer Method
+
+**Description:** Optimize brute-force method by pre-sorting points by x and y axis, partitioning the points into quadrants and finding closest x, y, and split pairs then comparing.
+
+**Inversion types**:
+
+1. Left inversion (i, j < n/2) => compute recursively
+2. Right inversion (i, j > n/2) => compute recursively
+3. Split inversion (i <= n/2 <= j) => compute by sorting left/right & counting right insertions
+
+**Algorithm**
+
+1. Recursively split array of length n into n subarrays of length 1
+2. "Merge" array back together, counting inversions between left/right arrays
+
+**Time Complexity:** *O(nlog(n))*
+
+**Example:**
+
+`count_inversions([9, 1, 2, 3, 4]) => {'list': [1, 2, 3, 4, 9], 'inversion_count': 4}`
+
+__Sources__
+* [Counting Inversions (YouTube)](https://www.youtube.com/watch?v=MxiQa22KrSQ)
+* [Divide & Conquer Algorithms (Coursera)](https://www.coursera.org/learn/algorithms-divide-conquer)
