@@ -98,3 +98,48 @@ __Sources__
 __Sources__
 * [Randomized Selection (YouTube)](https://www.youtube.com/watch?v=AHaaFVmAsvA)
 * [Divide & Conquer Algorithms (Coursera)](https://www.coursera.org/learn/algorithms-divide-conquer)
+
+
+## Closest Pair of Points
+
+### Brute-force Method
+**Description:** Determine the closest pair of two-dimensional points
+
+**Algorithm**
+
+1. Iterate over every single set of points
+2. Return closest pair in set
+
+**Time Complexity:** *O(n^2)*
+
+**Example:**
+
+`closest_pair_brute_force([(-12, -9), (-10, -4), (-1, -1), (1, 1), (7, 11), (9, 15)]) => [(-1, -1), (1, 1)]`
+
+### Divide & Conquer Method
+**Description:** Optimize brute-force method by pre-sorting points by x and y axis, partitioning the points into quadrants and finding closest x, y, and split pairs then comparing.
+
+**Algorithm**
+
+1. Partition points P into Q, the left half, and R, the right half
+2. Create arrays Qx, Qy, and Rx, Ry, the points in Q and R sorted by x/y coordinates respectively
+3. Find the closest pair in left-sector recursively
+4. Find the closest pair in the right-sector recursively
+5. Find the closest split pair
+6. Compare delta and return closest pair
+
+**Time Complexity:** *O(nlog(n))*
+
+**Example:**
+
+`P = [(-12, -9), (-10, -4), (-1, -1), (1, 1), (7, 11), (9, 15)]`
+
+`Px = sort_points_by_axis(P, True)`
+
+`Py = sort_points_by_axis(P, False)`
+
+`closest_pair(Px, Py) => [(1, 1), (1, 1)]`
+
+__Sources__
+* [Closest Pair of Points (Wikipedia)](https://en.wikipedia.org/wiki/Closest_pair_of_points_problem)
+* [Divide & Conquer Algorithms (Coursera)](https://www.coursera.org/learn/algorithms-divide-conquer)
