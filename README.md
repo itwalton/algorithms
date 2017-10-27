@@ -69,3 +69,32 @@ __Sources__
 __Sources__
 * [Quicksort (Wikipedia)](https://en.wikipedia.org/wiki/Quicksort)
 * [Divide & Conquer Algorithms (Coursera)](https://www.coursera.org/learn/algorithms-divide-conquer)
+
+
+## Randomized Selection
+
+**Description:** Finds ith order statistic from unordered list by partitioning around random element and recursing over subset
+
+**Algorithm**
+
+1. Choose pivot p from A uniformly at random
+2. Order elements around the pivot, so that elements < pivot are on the left and elements >= pivot are on the right
+3. If the pivot index is < requested ith order, traverse the right subarray
+4. If the pivot index is > requested ith order, traverse the left subarray
+5. If the pivot index is the requested ith order, return pivot
+
+**Time Complexity (worst case):** *O(n^2)*
+
+**Time Complexity (best case):** *O(n)*
+
+**Space Complexity:** *O(log(n))*
+
+**Example:**
+
+`alist = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10]`
+
+`print(randomized_selection(alist, 5, 0, len(alist)-1)) => 5`
+
+__Sources__
+* [Randomized Selection (YouTube)](https://www.youtube.com/watch?v=AHaaFVmAsvA)
+* [Divide & Conquer Algorithms (Coursera)](https://www.coursera.org/learn/algorithms-divide-conquer)
