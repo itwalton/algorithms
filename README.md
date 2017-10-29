@@ -232,7 +232,7 @@ __Sources__
 * [Divide & Conquer Algorithms (Coursera)](https://www.coursera.org/learn/algorithms-divide-conquer)
 
 
-### Karger's Randomized Contraction Algorithm
+## Karger's Randomized Contraction Algorithm
 
 **Description:** Determine the minimum cut of an undirected graph, to a considerable degree of confidence, by contracting an edge at random, repeated over many trials.
 
@@ -256,3 +256,48 @@ While there are more than 2 vertices:
 __Sources__
 * [Karger's Algorithm (Wikipedia)](https://en.wikipedia.org/wiki/Karger%27s_algorithm)
 * [Divide & Conquer Algorithms (Coursera)](https://www.coursera.org/learn/algorithms-divide-conquer)
+
+
+## Breadth-First Search
+
+**Description:** Given an undirected graph and a starting vertex s, traverse graph in "layers" by exploring all adjacent vertices.
+
+**Algorithm**
+
+Starting at vertex s,
+
+1. Mark s as explored
+
+2. Initialize queue with s
+
+3. While queue is not empty,
+* remove the first node in queue
+* iterate over it's edges
+* marking the adjacent vertices as "explored"
+* add adjacent vertex to queue
+
+### Shortest Path
+
+**Description:** Determine minimum # of edges between two vertices, s and v.
+
+**Time Complexity:** *O(m+n), where n is the # of vertices and m is the # of edges*
+
+**Example**
+
+`graph = {
+  's': ['a', 'b'],
+  'a': ['s', 'c'],
+  'b': ['s', 'c', 'd'],
+  'c': ['a', 'b', 'd', 'e'],
+  'd': ['b', 'c', 'e'],
+  'e': ['c', 'd']
+}`
+
+`shortest_path(graph, 's', 'e') # => 3`
+
+__Sources__
+
+* [Breadth-First Search (Wikipedia)](https://en.wikipedia.org/wiki/Breadth-first_search)
+* [Graph Search & Connectivity (Coursera)](https://www.coursera.org/learn/algorithms-graphs-data-structures)
+
+
