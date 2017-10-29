@@ -260,7 +260,7 @@ __Sources__
 
 ## Breadth-First Search
 
-**Description:** Given an undirected graph and a starting vertex s, traverse graph in "layers" by exploring all adjacent vertices.
+**Description:** Traverse graph in "layers" by exploring all adjacent vertices.
 
 **Algorithm**
 
@@ -275,6 +275,7 @@ Starting at vertex s,
 * iterate over it's edges
 * marking the adjacent vertices as "explored"
 * add adjacent vertex to queue
+
 
 ### Shortest Path
 
@@ -300,4 +301,36 @@ __Sources__
 * [Breadth-First Search (Wikipedia)](https://en.wikipedia.org/wiki/Breadth-first_search)
 * [Graph Search & Connectivity (Coursera)](https://www.coursera.org/learn/algorithms-graphs-data-structures)
 
+## Depth-First Search
 
+**Description:** Traverse graph by following edges to termination, backtracking only when necessary.
+
+**Algorithm**
+
+Starting at vertex s,
+
+1. Mark s as explored
+
+2. Initialize stack with s
+
+3. While stack is not empty:
+* iterate over edges (s, v)
+* if v is unexplored, recursively call DFS with v
+
+
+### Topological Ordering
+
+**Description:** Sequence vertices in a directed, acyclic graph.
+
+**Time Complexity:** *O(m+n)*
+
+**Example:**
+
+`graph = {
+  's': ['u', 'w'],
+  'u': ['x'],
+  'w': ['x'],
+  'x': []
+}`
+
+`topological_sort(graph) # => ['s', 'v', 'w', 'x'] OR ['s', 'w', 'v', x']`
