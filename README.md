@@ -334,3 +334,42 @@ Starting at vertex s,
 }`
 
 `topological_sort(graph) # => ['s', 'v', 'w', 'x'] OR ['s', 'w', 'v', x']`
+
+__Sources__
+
+* [Depth-first Search (Wikipedia)](https://en.wikipedia.org/wiki/Depth-first_search)
+* [Graph Search & Connectivity (Coursera)](https://www.coursera.org/learn/algorithms-graphs-data-structures)
+
+
+## Kosaraju's Two-Pass Algorithm
+
+**Description:** Compute strongly connected components in a directed graph in linear time.
+
+**Algorithm**
+
+1. Reverse all arcs in the directed graph
+
+2. Run DFS from every node in the graph, tracking finishing times
+
+3. Translate vertices on the original graph by the finishing times in #2
+
+4. Run DFS from every node in the graph, tracking leaders
+
+**Time Complexity:** *O(m+n)*
+
+**Example**
+
+`graph = {
+  1: [4, 7],
+  2: [8],
+  3: [9],
+  4: [],
+  5: [2],
+  6: [3, 8],
+  7: [9, 10],
+  8: [5],
+  9: [6],
+  10: [1]
+}`
+
+`kosaraju(graph) # => {9: [8, 7, 9], 10: [10], 3: [2, 1, 3], 6: [5, 4, 6]}`
