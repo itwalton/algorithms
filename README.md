@@ -373,3 +373,8 @@ __Sources__
 }`
 
 `kosaraju(graph) # => {9: [8, 7, 9], 10: [10], 3: [2, 1, 3], 6: [5, 4, 6]}`
+
+__Sources__
+
+* [Kosaraju's algorithm (Wikipedia)](https://en.wikipedia.org/wiki/Kosaraju%27s_algorithm)
+* [Graph Search & Connectivity (Coursera)](https://www.coursera.org/learn/algorithms-graphs-data-structures)
